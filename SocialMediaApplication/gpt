@@ -1,34 +1,95 @@
 The relationships between the entities are as follows:
 
-A User can create many Posts, and a Post is created by one User. This is a one-to-many relationship, and it is represented by the @OneToMany annotation in the User class and the @ManyToOne annotation in the Post class.
-
-A User can write many Comments, and a Comment is written by one User. This is another one-to-many relationship, and it is represented by the @OneToMany annotation in the User class and the @ManyToOne annotation in the Comment class.
-
-A User can follow many other Users, and a User can be followed by many other Users. This is a many-to-many relationship, and it is represented by the @ManyToMany annotation and the @JoinTable annotation in the User class.
-
-A User can like many Posts, and a Post can be liked by many Users. This is another many-to-many relationship, and it is represented by the @ManyToMany annotation and the @JoinTable annotation in the User class and the Post class.
-
-A User can like many Comments, and a Comment can be liked by many Users. This is yet another many-to-many relationship, and it is represented by the @ManyToMany annotation and the @JoinTable annotation in the User class and the Comment class.
-
-A Post can have many Comments, and a Comment belongs to one Post. This is a one-to-many relationship, and it is represented by the @OneToMany annotation in the Post class and the @ManyToOne annotation in the Comment class.
-
-A Post can have many Tags, and a Tag can be associated with many Posts. This is another many-to-many relationship, and it is represented by the @ManyToMany annotation and the @JoinTable annotation in the Post class and the Tag class.
-
-A Comment can have many Likes, and a Like belongs to one Comment. This is a one-to-many relationship, and it is represented by the @OneToMany annotation in the Comment class and the @ManyToOne annotation in the Like class.
-
-A User can send many Messages, and a Message is sent by one User. This is a one-to-many relationship, and it is represented by the @OneToMany annotation in the User class and the @ManyToOne annotation in the Message class.
-
-A User can receive many Messages, and a Message is received by one User. This is another one-to-many relationship
+A User can create many Posts, and a Post is created by one User. 
+This is a one-to-many relationship, and it is represented by the @OneToMany annotation 
+in the User class and the @ManyToOne annotation in the Post class.
 
 
+
+A User can write many Comments, and a Comment is written by one User. 
+This is another one-to-many relationship, and it is represented by the @OneToMany annotation 
+in the User class and the @ManyToOne annotation in the Comment class.
+
+
+
+A User can follow many other Users, and a User can be followed by many other Users. 
+This is a many-to-many relationship, and it is represented by the @ManyToMany annotation 
+and the @JoinTable annotation in the User class.
+
+
+
+A User can like many Posts, and a Post can be liked by many Users. 
+This is another many-to-many relationship, and it is represented by the @ManyToMany annotation 
+and the @JoinTable annotation in the User class and the Post class.
+
+
+
+A User can like many Comments, and a Comment can be liked by many Users. 
+This is yet another many-to-many relationship, and it is represented by the @ManyToMany annotation
+ and the @JoinTable annotation in the User class and the Comment class.
+
+
+
+A Post can have many Comments, and a Comment belongs to one Post. 
+This is a one-to-many relationship, and it is represented by the @OneToMany annotation
+ in the Post class and the @ManyToOne annotation in the Comment class.
+ 
+ 
+
+A Post can have many Tags, and a Tag can be associated with many Posts. 
+This is another many-to-many relationship, and it is represented by the @ManyToMany annotation
+ and the @JoinTable annotation in the Post class and the Tag class.
+
+
+
+A Comment can have many Likes, and a Like belongs to one Comment.
+ This is a one-to-many relationship, and it is represented by the @OneToMany annotation 
+ in the Comment class and the @ManyToOne annotation in the Like class.
+ 
+ 
+
+A User can send many Messages, and a Message is sent by one User.
+ This is a one-to-many relationship, and it is represented by the @OneToMany annotation 
+ in the User class and the @ManyToOne annotation in the Message class.
+
+
+A User can receive many Messages, and a Message is received by one User. 
+This is another one-to-many relationship
 
 
 pramilasahoo008@gmail.com
 you missed some entities
 I apologize for the oversight. Here are the remaining entities and their relationships:
 
-A User can belong to many Groups, and a Group can have many Users. This is a many-to-many relationship, and it is represented by the @ManyToMany annotation and the @JoinTable annotation in the User class and the Group class.
+A User can belong to many Groups, and a Group can have many Users. 
+This is a many-to-many relationship, and it is represented by the @ManyToMany annotation
+ and the @JoinTable annotation in the User class and the Group class.
+ 
+ 
 
-A User can attend many Events, and an Event can have many Users in attendance. This is another many-to-many relationship, and it is represented by the @ManyToMany annotation and the @JoinTable annotation in the User class and the Event class.
+A User can attend many Events, and an Event can have many Users in attendance. 
+This is another many-to-many relationship, and it is represented by the @ManyToMany annotation 
+and the @JoinTable annotation in the User class and the Event class.
 
-A User can follow many Pages, and a Page can have many User followers. This is another many-to-many relationship, and it is represented by the @ManyToMany annotation and the @JoinTable annotation in the User class and the Page class.
+
+
+A User can follow many Pages, and a Page can have many User followers. 
+This is another many-to-many relationship, and it is represented by the @ManyToMany annotation
+ and the @JoinTable annotation in the User class and the Page class.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

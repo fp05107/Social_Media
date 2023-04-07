@@ -2,23 +2,45 @@ package com.socialmedia.app.entities;
 
 import java.util.List;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @AllArgsConstructor
-@Data
+@NoArgsConstructor
+@Getter
+@Setter
 @Entity
 public class User {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	@NotBlank
+	@Min(3)
+	@Max(20)
+	private String userName;
+	
+	@Email
+	private String email;
+	
+	private String password;
+	
 	@OneToMany(mappedBy = "user")
 	private List<Post> posts;
 
