@@ -16,13 +16,13 @@ public interface UserService {
 	
 	public User searchUserByEmail(String email) throws UserException;
 	
-	public User searchUserByInterests(String interests) throws UserException;
+	public List<User> searchUserByInterests(String interests) throws UserException;
 	
 	public User deleteUserById(Integer id) throws UserException;
 	
 	public User deleteUserByEmail(String email) throws UserException;
 	
-	public List<Post> getAllPostByUserId(Integer id) throws UserException;
+	
 	
 	
 }

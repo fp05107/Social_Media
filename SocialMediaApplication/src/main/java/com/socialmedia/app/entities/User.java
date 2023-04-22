@@ -23,6 +23,11 @@ public class User {
     
     private String Email;
     
+    private String phoneNo;
+    
+    private String bio;
+    
+    String intersts;
     // Other user properties
     
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
