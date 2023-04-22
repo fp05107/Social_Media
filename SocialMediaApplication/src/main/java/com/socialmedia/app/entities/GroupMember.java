@@ -10,22 +10,20 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Message {
+public class GroupMember {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String content;
-    // Other message properties
+    private boolean isAdmin;
+    // Other group member properties
     
     @ManyToOne
-    @JoinColumn(name = "sender_id")
-    private User sender;
+    @JoinColumn(name = "user_id")
+    private User user;
     
     @ManyToOne
-    @JoinColumn(name = "receiver_id")
-    private User receiver;
+    @JoinColumn(name = "group_id")
+    private Group group;
     
     // Getters and setters
 }
-
-	

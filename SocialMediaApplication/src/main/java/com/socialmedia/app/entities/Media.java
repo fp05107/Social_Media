@@ -10,22 +10,16 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Message {
+public class Media {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String content;
-    // Other message properties
+    private String url;
+    // Other media properties
     
     @ManyToOne
-    @JoinColumn(name = "sender_id")
-    private User sender;
+    @JoinColumn(name = "post_id")
+    private Post post;
     
-    @ManyToOne
-    @JoinColumn(name = "receiver_id")
-    private User receiver;
-    
-    // Getters and setters
+   
 }
-
-	

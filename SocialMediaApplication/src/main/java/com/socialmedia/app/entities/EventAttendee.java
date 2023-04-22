@@ -10,22 +10,19 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Message {
+public class EventAttendee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String content;
-    // Other message properties
     
     @ManyToOne
-    @JoinColumn(name = "sender_id")
-    private User sender;
+    @JoinColumn(name = "user_id")
+    private User user;
     
     @ManyToOne
-    @JoinColumn(name = "receiver_id")
-    private User receiver;
+    @JoinColumn(name = "event_id")
+    private Event event;
     
     // Getters and setters
 }
 
-	

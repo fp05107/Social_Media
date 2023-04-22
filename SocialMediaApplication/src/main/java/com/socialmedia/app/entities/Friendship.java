@@ -10,16 +10,18 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Notification {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String content;
-    // Other notification properties
-    
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-    
-    // Getters and setters
+public class Friendship {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User user;
+
+	@ManyToOne
+	@JoinColumn(name = "friend_id")
+	private User friend;
+
+	// Getters and setters
 }

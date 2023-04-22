@@ -2,39 +2,46 @@ package com.socialmedia.app.entities;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
+@Data
 @Entity
 public class Post {
-
-	@Id
-	private Long id;
-
-	@ManyToOne
-	private User user;
-
-	@OneToMany(mappedBy = "post")
-	private List<Comment> comments;
-
-	@ManyToMany
-	@JoinTable(name = "post_tags", joinColumns = @JoinColumn(name = "post_id"), inverseJoinColumns = @JoinColumn(name = "tag_id"))
-	private List<Tag> tags;
-
-	@ManyToMany(mappedBy = "likedPosts")
-	private List<User> likedBy;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String content;
+    // Other post properties
+    
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+    
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+    private List<Comment> comments;
+    
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+    private List<Like> likes;
+    
+    /**
+     * 
+     */
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+    private List<Media> media;
+    
+    /**
+     * 
+     */
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+    private List<Tag> tags;
+    
+    // Getters and setters
 }

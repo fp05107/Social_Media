@@ -1,25 +1,25 @@
 package com.socialmedia.app.entities;
 
-import java.util.List;
-
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import lombok.Data;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
+@Data
 @Entity
 public class Tag {
-
-	@Id
-	private Long id;
-
-	@ManyToMany(mappedBy = "tags")
-	private List<Post> posts;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String name;
+    // Other tag properties
+    
+    @ManyToOne
+    @JoinColumn(name = "post_id")
+    private Post post;
+    
+    // Getters and setters
 }
