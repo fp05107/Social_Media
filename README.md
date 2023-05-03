@@ -21,13 +21,8 @@
 </ul>
 
 # Diagram
-<img src="MyMediaDiagram.png"/>
+<img src="/MyMediaDiagram.png"/>
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>User Controller API Documentation</title>
-</head>
 <body>
 	<header>
 		<h1>User Controller API Documentation</h1>
