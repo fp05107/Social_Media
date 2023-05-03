@@ -20,6 +20,9 @@
  <li>Tomcat Server</li>
 </ul>
 
+# Diagram
+<img src="https://drive.google.com/file/d/1y7JqBF_1W6al5E3x2jIlPmdbtcjVUXYF/view?usp=sharing"/>
+
 <!DOCTYPE html>
 <html>
 <head>
